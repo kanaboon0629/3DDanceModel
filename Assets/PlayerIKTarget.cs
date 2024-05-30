@@ -13,27 +13,30 @@ public class PlayerIKTarget : MonoBehaviour
 {
     Animator animator;
     float init_hips_y;
+
+    //人数
+    static int numberOfSets = 2;
     //IKのターゲットとなる関節のターゲットオブジェクト
     //手
-    GameObject target_left_hand;
-    GameObject target_left_elbow;
-    GameObject target_left_upperarm;
-    GameObject target_right_hand;
-    GameObject target_right_elbow;
-    GameObject target_right_upperarm;
+    GameObject[] target_left_hand = new GameObject[numberOfSets];
+    GameObject[] target_left_elbow = new GameObject[numberOfSets];
+    GameObject[] target_left_upperarm = new GameObject[numberOfSets];
+    GameObject[] target_right_hand = new GameObject[numberOfSets];
+    GameObject[] target_right_elbow = new GameObject[numberOfSets];
+    GameObject[] target_right_upperarm = new GameObject[numberOfSets];
     //足
-    GameObject target_left_foot;
-    GameObject target_left_knee;
-    GameObject target_left_upperleg;
-    GameObject target_right_foot;
-    GameObject target_right_knee;
-    GameObject target_right_upperleg;
+    GameObject[] target_left_foot = new GameObject[numberOfSets];
+    GameObject[] target_left_knee = new GameObject[numberOfSets];
+    GameObject[] target_left_upperleg = new GameObject[numberOfSets];
+    GameObject[] target_right_foot = new GameObject[numberOfSets];
+    GameObject[] target_right_knee = new GameObject[numberOfSets];
+    GameObject[] target_right_upperleg = new GameObject[numberOfSets];
     //胴体
-    GameObject target_body_lookat;
-    GameObject target_head;
-    GameObject target_neck;
-    GameObject target_spine;
-    GameObject target_hips;
+    GameObject[] target_body_lookat = new GameObject[numberOfSets];
+    GameObject[] target_head = new GameObject[numberOfSets];
+    GameObject[] target_neck = new GameObject[numberOfSets];
+    GameObject[] target_spine = new GameObject[numberOfSets];
+    GameObject[] target_hips = new GameObject[numberOfSets];
 
     //骨格jsonファイル
     //Json skeleton data読み出し
@@ -126,27 +129,28 @@ public class PlayerIKTarget : MonoBehaviour
         //TODO: ENUM型?
         //体幹のIKターゲット
         //this.target_body_lookat = GameObject.Find("BodyLookAtTarget");
-        this.target_neck = GameObject.Find("NeckTarget");
-        this.target_spine = GameObject.Find("SpineTarget");
-        this.target_hips = GameObject.Find("HipsTarget");
-        this.target_head = GameObject.Find("HeadTarget");
-        //右手のIKターゲット
-        this.target_right_upperarm = GameObject.Find("RightUpperArmTarget");
-        this.target_right_elbow = GameObject.Find("RightElbowTarget");
-        this.target_right_hand = GameObject.Find("RightHandTarget");
-        //左手のIKターゲット
-        this.target_left_upperarm = GameObject.Find("LeftUpperArmTarget");
-        this.target_left_elbow = GameObject.Find("LeftElbowTarget");
-        this.target_left_hand = GameObject.Find("LeftHandTarget");
-        //右足のIKターゲット
-        this.target_right_upperleg = GameObject.Find("RightUpperLegTarget");
-        this.target_right_knee = GameObject.Find("RightKneeTarget");
-        this.target_right_foot = GameObject.Find("RightFootTarget");
-        //左足のIKターゲット
-        this.target_left_upperleg = GameObject.Find("LeftUpperLegTarget");
-        this.target_left_knee = GameObject.Find("LeftKneeTarget");
-        this.target_left_foot = GameObject.Find("LeftFootTarget");
-
+        for (int i = 0; i < numberOfSets; i++) {
+            this.target_neck[i] = GameObject.Find("NeckTarget" + (i + 1));
+            this.target_spine[i] = GameObject.Find("SpineTarget" + (i + 1));
+            this.target_hips[i] = GameObject.Find("HipsTarget" + (i + 1));
+            this.target_head[i] = GameObject.Find("HeadTarget" + (i + 1));
+            // Right arm IK targets
+            this.target_right_upperarm[i] = GameObject.Find("RightUpperArmTarget" + (i + 1));
+            this.target_right_elbow[i] = GameObject.Find("RightElbowTarget" + (i + 1));
+            this.target_right_hand[i] = GameObject.Find("RightHandTarget" + (i + 1));
+            // Left arm IK targets
+            this.target_left_upperarm[i] = GameObject.Find("LeftUpperArmTarget" + (i + 1));
+            this.target_left_elbow[i] = GameObject.Find("LeftElbowTarget" + (i + 1));
+            this.target_left_hand[i] = GameObject.Find("LeftHandTarget" + (i + 1));
+            // Right leg IK targets
+            this.target_right_upperleg[i] = GameObject.Find("RightUpperLegTarget" + (i + 1));
+            this.target_right_knee[i] = GameObject.Find("RightKneeTarget" + (i + 1));
+            this.target_right_foot[i] = GameObject.Find("RightFootTarget" + (i + 1));
+            // Left leg IK targets
+            this.target_left_upperleg[i] = GameObject.Find("LeftUpperLegTarget" + (i + 1));
+            this.target_left_knee[i] = GameObject.Find("LeftKneeTarget" + (i + 1));
+            this.target_left_foot[i] = GameObject.Find("LeftFootTarget" + (i + 1));
+        }
 
         //
         //3d humanoid modelの関節オブジェクト取得
@@ -362,10 +366,11 @@ public class PlayerIKTarget : MonoBehaviour
         //TODO : headの座標 3d humanoid modelへ反映
 
         //体幹
-        this.target_hips.transform.position = this.calibrated_skeleton_coord["hips"];   
-        this.target_spine.transform.position = this.calibrated_skeleton_coord["spine"];
-        this.target_neck.transform.position = this.calibrated_skeleton_coord["neck"];
-
+        for (int i = 0; i < numberOfSets; i++) {
+            this.target_hips[i].transform.position = this.calibrated_skeleton_coord["hips"];   
+            this.target_spine[i].transform.position = this.calibrated_skeleton_coord["spine"];
+            this.target_neck[i].transform.position = this.calibrated_skeleton_coord["neck"];
+        }
 
         //
         //右腕の処理
@@ -396,9 +401,12 @@ public class PlayerIKTarget : MonoBehaviour
         //右手位置セット
         Debug.LogFormat("Right Upper Arm Object:{0}",this.target_right_upperarm);
         Debug.LogFormat("Right Upper Arm Coord:{0}",this.calibrated_skeleton_coord["right_upperarm"]);
-        this.target_right_upperarm.transform.position = this.calibrated_skeleton_coord["right_upperarm"];
-        this.target_right_elbow.transform.position = this.calibrated_skeleton_coord["right_lowerarm"];
-        this.target_right_hand.transform.position = this.calibrated_skeleton_coord["right_hand"];
+
+        for (int i = 0; i < numberOfSets; i++) {
+            this.target_right_upperarm[i].transform.position = this.calibrated_skeleton_coord["right_upperarm"];
+            this.target_right_elbow[i].transform.position = this.calibrated_skeleton_coord["right_lowerarm"];
+            this.target_right_hand[i].transform.position = this.calibrated_skeleton_coord["right_hand"];
+        }
 
         //左腕の処理
         // TODO: calibrated skeleton coordがおかしい
@@ -427,10 +435,12 @@ public class PlayerIKTarget : MonoBehaviour
         //左手位置セット
         Debug.LogFormat("Left Upper Arm Object:{0}",this.target_left_upperarm);
         Debug.LogFormat("Left Upper Arm Coord:{0}",this.calibrated_skeleton_coord["left_upperarm"]);
-        this.target_left_upperarm.transform.position = this.calibrated_skeleton_coord["left_upperarm"];
-        this.target_left_elbow.transform.position = this.calibrated_skeleton_coord["left_lowerarm"];
-        this.target_left_hand.transform.position = this.calibrated_skeleton_coord["left_hand"];
 
+        for (int i = 0; i < numberOfSets; i++) {
+            this.target_left_upperarm[i].transform.position = this.calibrated_skeleton_coord["left_upperarm"];
+            this.target_left_elbow[i].transform.position = this.calibrated_skeleton_coord["left_lowerarm"];
+            this.target_left_hand[i].transform.position = this.calibrated_skeleton_coord["left_hand"];
+        }
 
         //右足位置、スケーリング
         this.calibrated_skeleton_coord["right_upperleg"] = get_calibrated_target_position(
@@ -451,9 +461,12 @@ public class PlayerIKTarget : MonoBehaviour
             pred_joint_start  : this.skeleton_coord["right_lowerleg"],
             pred_joint_end    : this.skeleton_coord["right_foot"]
         );
-        this.target_right_upperleg.transform.position = this.calibrated_skeleton_coord["right_upperleg"];
-        this.target_right_knee.transform.position = this.calibrated_skeleton_coord["right_lowerleg"];
-        this.target_right_foot.transform.position = this.calibrated_skeleton_coord["right_foot"];
+
+        for (int i = 0; i < numberOfSets; i++) {
+            this.target_right_upperleg[i].transform.position = this.calibrated_skeleton_coord["right_upperleg"];
+            this.target_right_knee[i].transform.position = this.calibrated_skeleton_coord["right_lowerleg"];
+            this.target_right_foot[i].transform.position = this.calibrated_skeleton_coord["right_foot"];
+        }
 
         //左足位置、スケーリング
         this.calibrated_skeleton_coord["left_upperleg"] = get_calibrated_target_position(
@@ -475,9 +488,12 @@ public class PlayerIKTarget : MonoBehaviour
             pred_joint_end    : this.skeleton_coord["left_foot"]
         );
         //Debug.LogFormat("calibrated_skeleton_coord left_lowerleg:{0}",this.calibrated_skeleton_coord["left_lowerleg"]);
-        this.target_left_upperleg.transform.position = this.calibrated_skeleton_coord["left_upperleg"];
-        this.target_left_knee.transform.position = this.calibrated_skeleton_coord["left_lowerleg"];
-        this.target_left_foot.transform.position = this.calibrated_skeleton_coord["left_foot"];
+
+        for (int i = 0; i < numberOfSets; i++) {
+            this.target_left_upperleg[i].transform.position = this.calibrated_skeleton_coord["left_upperleg"];
+            this.target_left_knee[i].transform.position = this.calibrated_skeleton_coord["left_lowerleg"];
+            this.target_left_foot[i].transform.position = this.calibrated_skeleton_coord["left_foot"];
+        }
     }
 
     // Update is called once per frame
