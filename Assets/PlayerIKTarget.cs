@@ -15,7 +15,7 @@ public class PlayerIKTarget : MonoBehaviour
     float init_hips_y;
 
     //人数
-    static int numberOfSets = 2;
+    static int numberOfSets = 5;
     //IKのターゲットとなる関節のターゲットオブジェクト
     //手
     GameObject[] target_left_hand = new GameObject[numberOfSets];
