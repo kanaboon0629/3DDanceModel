@@ -367,9 +367,17 @@ public class PlayerIKTarget : MonoBehaviour
 
         //体幹
         for (int i = 0; i < numberOfSets; i++) {
-            this.target_hips[i].transform.position = this.calibrated_skeleton_coord["hips"];   
-            this.target_spine[i].transform.position = this.calibrated_skeleton_coord["spine"];
-            this.target_neck[i].transform.position = this.calibrated_skeleton_coord["neck"];
+            Vector3 hipsPos = this.calibrated_skeleton_coord["hips"];
+            hipsPos.z += 2 * i;
+            this.target_hips[i].transform.position = hipsPos;
+
+            Vector3 spinePos = this.calibrated_skeleton_coord["spine"];
+            spinePos.z += 2 * i;
+            this.target_spine[i].transform.position = spinePos;
+
+            Vector3 neckPos = this.calibrated_skeleton_coord["neck"];
+            neckPos.z += 2 * i;
+            this.target_neck[i].transform.position = neckPos;
         }
 
         //
@@ -403,9 +411,17 @@ public class PlayerIKTarget : MonoBehaviour
         Debug.LogFormat("Right Upper Arm Coord:{0}",this.calibrated_skeleton_coord["right_upperarm"]);
 
         for (int i = 0; i < numberOfSets; i++) {
-            this.target_right_upperarm[i].transform.position = this.calibrated_skeleton_coord["right_upperarm"];
-            this.target_right_elbow[i].transform.position = this.calibrated_skeleton_coord["right_lowerarm"];
-            this.target_right_hand[i].transform.position = this.calibrated_skeleton_coord["right_hand"];
+            Vector3 rightUpperArmPos = this.calibrated_skeleton_coord["right_upperarm"];
+            rightUpperArmPos.z += 2 * i;
+            this.target_right_upperarm[i].transform.position = rightUpperArmPos;
+
+            Vector3 rightElbowPos = this.calibrated_skeleton_coord["right_lowerarm"];
+            rightElbowPos.z += 2 * i;
+            this.target_right_elbow[i].transform.position = rightElbowPos;
+
+            Vector3 rightHandPos = this.calibrated_skeleton_coord["right_hand"];
+            rightHandPos.z += 2 * i;
+            this.target_right_hand[i].transform.position = rightHandPos;
         }
 
         //左腕の処理
@@ -437,9 +453,17 @@ public class PlayerIKTarget : MonoBehaviour
         Debug.LogFormat("Left Upper Arm Coord:{0}",this.calibrated_skeleton_coord["left_upperarm"]);
 
         for (int i = 0; i < numberOfSets; i++) {
-            this.target_left_upperarm[i].transform.position = this.calibrated_skeleton_coord["left_upperarm"];
-            this.target_left_elbow[i].transform.position = this.calibrated_skeleton_coord["left_lowerarm"];
-            this.target_left_hand[i].transform.position = this.calibrated_skeleton_coord["left_hand"];
+            Vector3 leftUpperArmPos = this.calibrated_skeleton_coord["left_upperarm"];
+            leftUpperArmPos.z += 2 * i;
+            this.target_left_upperarm[i].transform.position = leftUpperArmPos;
+
+            Vector3 leftElbowPos = this.calibrated_skeleton_coord["left_lowerarm"];
+            leftElbowPos.z += 2 * i;
+            this.target_left_elbow[i].transform.position = leftElbowPos;
+
+            Vector3 leftHandPos = this.calibrated_skeleton_coord["left_hand"];
+            leftHandPos.z += 2 * i;
+            this.target_left_hand[i].transform.position = leftHandPos;
         }
 
         //右足位置、スケーリング
@@ -463,9 +487,17 @@ public class PlayerIKTarget : MonoBehaviour
         );
 
         for (int i = 0; i < numberOfSets; i++) {
-            this.target_right_upperleg[i].transform.position = this.calibrated_skeleton_coord["right_upperleg"];
-            this.target_right_knee[i].transform.position = this.calibrated_skeleton_coord["right_lowerleg"];
-            this.target_right_foot[i].transform.position = this.calibrated_skeleton_coord["right_foot"];
+            Vector3 rightUpperLegPos = this.calibrated_skeleton_coord["right_upperleg"];
+            rightUpperLegPos.z += 2 * i;
+            this.target_right_upperleg[i].transform.position = rightUpperLegPos;
+
+            Vector3 rightKneePos = this.calibrated_skeleton_coord["right_lowerleg"];
+            rightKneePos.z += 2 * i;
+            this.target_right_knee[i].transform.position = rightKneePos;
+
+            Vector3 rightFootPos = this.calibrated_skeleton_coord["right_foot"];
+            rightFootPos.z += 2 * i;
+            this.target_right_foot[i].transform.position = rightFootPos;
         }
 
         //左足位置、スケーリング
@@ -489,10 +521,18 @@ public class PlayerIKTarget : MonoBehaviour
         );
         //Debug.LogFormat("calibrated_skeleton_coord left_lowerleg:{0}",this.calibrated_skeleton_coord["left_lowerleg"]);
 
-        for (int i = 0; i < numberOfSets; i++) {
-            this.target_left_upperleg[i].transform.position = this.calibrated_skeleton_coord["left_upperleg"];
-            this.target_left_knee[i].transform.position = this.calibrated_skeleton_coord["left_lowerleg"];
-            this.target_left_foot[i].transform.position = this.calibrated_skeleton_coord["left_foot"];
+        for (int i = 0; i < this.target_left_upperleg.Length; i++) {
+            Vector3 leftUpperLegPos = this.calibrated_skeleton_coord["left_upperleg"];
+            leftUpperLegPos.z += 2 * i;
+            this.target_left_upperleg[i].transform.position = leftUpperLegPos;
+
+            Vector3 leftKneePos = this.calibrated_skeleton_coord["left_lowerleg"];
+            leftKneePos.z += 2 * i;
+            this.target_left_knee[i].transform.position = leftKneePos;
+
+            Vector3 leftFootPos = this.calibrated_skeleton_coord["left_foot"];
+            leftFootPos.z += 2 * i;
+            this.target_left_foot[i].transform.position = leftFootPos;
         }
     }
 
