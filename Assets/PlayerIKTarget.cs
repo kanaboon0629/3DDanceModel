@@ -17,7 +17,12 @@ public class PlayerIKTarget : MonoBehaviour
     //人数
     static int numberOfSets = 5;
     //フォーメーション
-    public int formationType = 0;
+    //static int formationType = 1;   //row
+    //static int formationType = 2; //pyramid
+    //static int formationType = 3; //square
+    //static int formationType = 4; //trapezium
+    static int formationType = 5; //circle
+
     //IKのターゲットとなる関節のターゲットオブジェクト
     //手
     GameObject[] target_left_hand = new GameObject[numberOfSets];
@@ -507,13 +512,76 @@ public class PlayerIKTarget : MonoBehaviour
     void SetPositions(string key, GameObject[] targets, Dictionary<string, Vector3> calibratedCoords) {
         for (int i = 0; i < targets.Length; i++) {
             Vector3 pos = calibratedCoords[key];
-            if (formationType == 0) {
-                pos.z += 2 * i;
-                pos.x += 0 * i;
-            } else {
 
+            if (formationType == 1) {
+                pos += RowCalculateOffset(i);
+            } else if(formationType == 2){
+                pos += PyramidCalculateOffset(i);
+            } else if(formationType == 3){
+                pos += SquareCalculateOffset(i);
+            } else if(formationType == 4){
+                pos += TrapeziumCalculateOffset(i);
+            } else if(formationType == 5){
+                pos += CircleCalculateOffset(i);
             }
+            
             targets[i].transform.position = pos;
+        }
+    }
+    Vector3 RowCalculateOffset(int i) {
+        return new Vector3(0, 0, (i % 2 == 0) ? (-2 * (i / 2)) : (2 * ((i + 1) / 2)));   
+    }
+    Vector3 PyramidCalculateOffset(int i) {
+        if (i == 0) {
+            return new Vector3(2, 0, (i % 2 == 0) ? (-2 * (i / 2)) : (2 * ((i + 1) / 2)));   
+        }else if (i == 1) {
+            return new Vector3(0, 0, (i % 2 == 0) ? (-2 * (i / 2)) : (2 * ((i + 1) / 2)));   
+        }else if (i == 2) {
+            return new Vector3(0, 0, (i % 2 == 0) ? (-2 * (i / 2)) : (2 * ((i + 1) / 2)));   
+        }else if (i == 3) {
+            return new Vector3(-2, 0, (i % 2 == 0) ? (-2 * (i / 2)) : (2 * ((i + 1) / 2)));   
+        }else {
+            return new Vector3(-2, 0, (i % 2 == 0) ? (-2 * (i / 2)) : (2 * ((i + 1) / 2)));   
+        }
+    }
+
+    Vector3 SquareCalculateOffset(int i) {
+        if (i == 0) {
+            return new Vector3(0, 0, 0);   
+        }else if (i == 1) {
+            return new Vector3(2, 0, 2);      
+        }else if (i == 2) {
+            return new Vector3(2, 0, -2);     
+        }else if (i == 3) {
+            return new Vector3(-2, 0, 2);      
+        }else {
+            return new Vector3(-2, 0, -2);   
+        }
+    }
+    Vector3 TrapeziumCalculateOffset(int i) {
+        if (i == 0) {
+            return new Vector3(0, 0, 0);   
+        }else if (i == 1) {
+            return new Vector3(1, 0, 1);      
+        }else if (i == 2) {
+            return new Vector3(1, 0, -1);     
+        }else if (i == 3) {
+            return new Vector3(-1, 0, 2);      
+        }else {
+            return new Vector3(-1, 0, -2);   
+        }
+    }
+    Vector3 CircleCalculateOffset(int i) {
+        if (i == 0) {
+            return new Vector3(-2, 0, 0);   
+        }else if (i == 1) {
+            return new Vector3(2, 0, 1);      
+        }else if (i == 2) {
+            return new Vector3(2, 0, -1);     
+        }else if (i == 3) {
+            return new Vector3(0, 0, 2);      
+        }else {
+            return new Vector3(0, 0, -2);   
         }
     }
 }
