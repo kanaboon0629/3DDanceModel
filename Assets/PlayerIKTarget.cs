@@ -14,36 +14,27 @@ public class PlayerIKTarget : MonoBehaviour
     Animator animator;
     float init_hips_y;
 
-    //人数
-    static int numberOfSets = 5;
-    //フォーメーション
-    //static int formationType = 1;   //row
-    //static int formationType = 2; //pyramid
-    //static int formationType = 3; //square
-    //static int formationType = 4; //trapezium
-    static int formationType = 5; //circle
-
-    //IKのターゲットとなる関節のターゲットオブジェクト
-    //手
-    GameObject[] target_left_hand = new GameObject[numberOfSets];
-    GameObject[] target_left_elbow = new GameObject[numberOfSets];
-    GameObject[] target_left_upperarm = new GameObject[numberOfSets];
-    GameObject[] target_right_hand = new GameObject[numberOfSets];
-    GameObject[] target_right_elbow = new GameObject[numberOfSets];
-    GameObject[] target_right_upperarm = new GameObject[numberOfSets];
-    //足
-    GameObject[] target_left_foot = new GameObject[numberOfSets];
-    GameObject[] target_left_knee = new GameObject[numberOfSets];
-    GameObject[] target_left_upperleg = new GameObject[numberOfSets];
-    GameObject[] target_right_foot = new GameObject[numberOfSets];
-    GameObject[] target_right_knee = new GameObject[numberOfSets];
-    GameObject[] target_right_upperleg = new GameObject[numberOfSets];
-    //胴体
-    GameObject[] target_body_lookat = new GameObject[numberOfSets];
-    GameObject[] target_head = new GameObject[numberOfSets];
-    GameObject[] target_neck = new GameObject[numberOfSets];
-    GameObject[] target_spine = new GameObject[numberOfSets];
-    GameObject[] target_hips = new GameObject[numberOfSets];
+    // IKのターゲットとなる関節のターゲットオブジェクト
+    // 手
+    GameObject[] target_left_hand;
+    GameObject[] target_left_elbow;
+    GameObject[] target_left_upperarm;
+    GameObject[] target_right_hand;
+    GameObject[] target_right_elbow;
+    GameObject[] target_right_upperarm;
+    // 足
+    GameObject[] target_left_foot;
+    GameObject[] target_left_knee;
+    GameObject[] target_left_upperleg;
+    GameObject[] target_right_foot;
+    GameObject[] target_right_knee;
+    GameObject[] target_right_upperleg;
+    // 胴体
+    GameObject[] target_body_lookat;
+    GameObject[] target_head;
+    GameObject[] target_neck;
+    GameObject[] target_spine;
+    GameObject[] target_hips;
 
     //骨格jsonファイル
     //Json skeleton data読み出し
@@ -59,7 +50,11 @@ public class PlayerIKTarget : MonoBehaviour
         "matt_AllIWannaDo.json"
     };
     
-
+    
+    //人数
+    public int numberOfPerson = 0;
+    //フォーメーション
+    public int formationType = 0;
     public int FRAME_NUM = 0; //FRAME数
     public int current_frame_id = 0; //現在のフレーム番号
     private int init_frame_id = 0;
@@ -121,6 +116,25 @@ public class PlayerIKTarget : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
+        // ターゲットオブジェクトの初期化
+        target_left_hand = new GameObject[numberOfPerson];
+        target_left_elbow = new GameObject[numberOfPerson];
+        target_left_upperarm = new GameObject[numberOfPerson];
+        target_right_hand = new GameObject[numberOfPerson];
+        target_right_elbow = new GameObject[numberOfPerson];
+        target_right_upperarm = new GameObject[numberOfPerson];
+        target_left_foot = new GameObject[numberOfPerson];
+        target_left_knee = new GameObject[numberOfPerson];
+        target_left_upperleg = new GameObject[numberOfPerson];
+        target_right_foot = new GameObject[numberOfPerson];
+        target_right_knee = new GameObject[numberOfPerson];
+        target_right_upperleg = new GameObject[numberOfPerson];
+        target_body_lookat = new GameObject[numberOfPerson];
+        target_head = new GameObject[numberOfPerson];
+        target_neck = new GameObject[numberOfPerson];
+        target_spine = new GameObject[numberOfPerson];
+        target_hips = new GameObject[numberOfPerson];
+
         this.animator = GetComponent<Animator>();
         // this.init_hips_y = animator.GetBoneTransform(HumanBodyBones.Hips).transform.position.y;
         // this.animator.transform.position = new Vector3(0,0.5f,0);
@@ -136,7 +150,7 @@ public class PlayerIKTarget : MonoBehaviour
         //TODO: ENUM型?
         //体幹のIKターゲット
         //this.target_body_lookat = GameObject.Find("BodyLookAtTarget");
-        for (int i = 0; i < numberOfSets; i++) {
+        for (int i = 0; i < numberOfPerson; i++) {
             this.target_neck[i] = GameObject.Find("NeckTarget" + (i + 1));
             this.target_spine[i] = GameObject.Find("SpineTarget" + (i + 1));
             this.target_hips[i] = GameObject.Find("HipsTarget" + (i + 1));
