@@ -2677,6 +2677,8 @@ MonoBehaviour:
   - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
   - skeleton_coord_ATP2020_04_48_David_Goffin.json
   - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  numberOfPerson: 5
+  formationType: 2
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -3438,6 +3440,8 @@ MonoBehaviour:
   - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
   - skeleton_coord_ATP2020_04_48_David_Goffin.json
   - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  numberOfPerson: 5
+  formationType: 2
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -11995,6 +11999,8 @@ MonoBehaviour:
   - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
   - skeleton_coord_ATP2020_04_48_David_Goffin.json
   - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  numberOfPerson: 5
+  formationType: 2
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -14657,6 +14663,8 @@ MonoBehaviour:
   - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
   - skeleton_coord_ATP2020_04_48_David_Goffin.json
   - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  numberOfPerson: 5
+  formationType: 2
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -18463,6 +18471,8 @@ MonoBehaviour:
   - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
   - skeleton_coord_ATP2020_04_48_David_Goffin.json
   - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  numberOfPerson: 5
+  formationType: 2
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
