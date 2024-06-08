@@ -2662,7 +2662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formationType: 0
   json_file_name:
   - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
   - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
@@ -2678,6 +2677,8 @@ MonoBehaviour:
   - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
   - skeleton_coord_ATP2020_04_48_David_Goffin.json
   - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  numberOfPerson: 5
+  formationType: 1
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -3424,7 +3425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formationType: 0
   json_file_name:
   - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
   - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
@@ -3440,6 +3440,8 @@ MonoBehaviour:
   - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
   - skeleton_coord_ATP2020_04_48_David_Goffin.json
   - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  numberOfPerson: 5
+  formationType: 1
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -11982,7 +11984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formationType: 0
   json_file_name:
   - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
   - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
@@ -11998,6 +11999,8 @@ MonoBehaviour:
   - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
   - skeleton_coord_ATP2020_04_48_David_Goffin.json
   - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  numberOfPerson: 5
+  formationType: 1
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -14645,7 +14648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formationType: 0
   json_file_name:
   - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
   - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
@@ -14661,6 +14663,8 @@ MonoBehaviour:
   - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
   - skeleton_coord_ATP2020_04_48_David_Goffin.json
   - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  numberOfPerson: 5
+  formationType: 1
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -18452,7 +18456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formationType: 0
   json_file_name:
   - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
   - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
@@ -18468,6 +18471,8 @@ MonoBehaviour:
   - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
   - skeleton_coord_ATP2020_04_48_David_Goffin.json
   - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  numberOfPerson: 5
+  formationType: 1
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
