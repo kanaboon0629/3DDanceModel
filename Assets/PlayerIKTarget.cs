@@ -38,23 +38,25 @@ public class PlayerIKTarget : MonoBehaviour
 
     //骨格jsonファイル
     //Json skeleton data読み出し
-    //
+    //定義ごとコメントアウトしてビルドしないと書き換えられない！！！
     public string[] json_file_name = new string[]{
-        "skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json",
         "dance1.json",
         "momo_likey.json",
         "jyp.json",
         "jyp2.json",
         "jyp2New.json",
         "jyp3.json",
-        "matt_AllIWannaDo.json"
+        "matt_AllIWannaDo.json",
+        "hulaDance.json",
+        "hulaDanceSymmetry.json"
     };
-    
     
     //人数
     public int numberOfPerson = 0;
     //フォーメーション
     public int formationType = 0;
+    //左右対称の有無
+    public bool isSymmetry = false;
     public int FRAME_NUM = 0; //FRAME数
     public int current_frame_id = 0; //現在のフレーム番号
     private int init_frame_id = 0;
@@ -231,15 +233,18 @@ public class PlayerIKTarget : MonoBehaviour
             Debug.Log ("Dictionary:" + pair.Key + " : " + pair.Value);
         }
 
-        //string datapath = Application.dataPath + "/Resources/" + json_file_name[0];
-        //string datapath = "Assets/Resources/skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json";
         //ココ書き換える
-        string datapath = "Assets/Resources/hulaDance_U4P4u6eSIHw_si=5XCbThpCddUNiwRs_220_243.json";
+        //string datapath = "Assets/Resources/hulaDance.json";
+        string datapath = "Assets/Resources/";
+        if (!isSymmetry) {
+            datapath = datapath + json_file_name[7];
+        }else{
+            datapath = datapath + json_file_name[8];
+        }
         Debug.Log("path: "+ datapath);
         StreamReader reader = new StreamReader(datapath); //受け取ったパスのファイルを読み込む
         string datastr = reader.ReadToEnd();//ファイルの中身をstring型としてすべて読み込む
         reader.Close();//ファイルを閉じる
-
         json_data= Json.Deserialize(datastr) as Dictionary<string, object>;
         Debug.Log("json_data count:"+json_data.Count);
         current_frame_id = 0;
@@ -274,8 +279,8 @@ public class PlayerIKTarget : MonoBehaviour
         //     current_frame_id=324;
         //     return ;
         // }
-        Debug.LogFormat("Max Frame Num:{0}",FRAME_NUM);
-        Debug.LogFormat("Current frame:{0}",current_frame_id);
+        //Debug.LogFormat("Max Frame Num:{0}",FRAME_NUM);
+        //Debug.LogFormat("Current frame:{0}",current_frame_id);
         
         //TODO: シンプルなコードにする
         //TODO: FRAME_NUMここで読みだしたほうが良いかも
@@ -418,8 +423,8 @@ public class PlayerIKTarget : MonoBehaviour
         );
 
         //右手位置セット
-        Debug.LogFormat("Right Upper Arm Object:{0}",this.target_right_upperarm);
-        Debug.LogFormat("Right Upper Arm Coord:{0}",this.calibrated_skeleton_coord["right_upperarm"]);
+        //Debug.LogFormat("Right Upper Arm Object:{0}",this.target_right_upperarm);
+        //Debug.LogFormat("Right Upper Arm Coord:{0}",this.calibrated_skeleton_coord["right_upperarm"]);
 
         SetPositions("right_upperarm", this.target_right_upperarm, this.calibrated_skeleton_coord);
         SetPositions("right_lowerarm", this.target_right_elbow, this.calibrated_skeleton_coord);
@@ -450,8 +455,8 @@ public class PlayerIKTarget : MonoBehaviour
             pred_joint_end    : this.skeleton_coord["left_hand"]
         );
         //左手位置セット
-        Debug.LogFormat("Left Upper Arm Object:{0}",this.target_left_upperarm);
-        Debug.LogFormat("Left Upper Arm Coord:{0}",this.calibrated_skeleton_coord["left_upperarm"]);
+        //Debug.LogFormat("Left Upper Arm Object:{0}",this.target_left_upperarm);
+        //Debug.LogFormat("Left Upper Arm Coord:{0}",this.calibrated_skeleton_coord["left_upperarm"]);
 
         SetPositions("left_upperarm", this.target_left_upperarm, this.calibrated_skeleton_coord);
         SetPositions("left_lowerarm", this.target_left_elbow, this.calibrated_skeleton_coord);
@@ -512,7 +517,7 @@ public class PlayerIKTarget : MonoBehaviour
     //50fps固定
     void FixedUpdate(){
         float fps = 1f / Time.deltaTime;
-        Debug.LogFormat("{0}fps", fps);
+        //Debug.LogFormat("{0}fps", fps);
 
         this.timeElapsed += Time.deltaTime;
 
