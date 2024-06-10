@@ -15,26 +15,26 @@ public class PlayerIKTarget : MonoBehaviour
     float init_hips_y;
 
     // IKのターゲットとなる関節のターゲットオブジェクト
-    // 手
-    GameObject[] target_left_hand;
-    GameObject[] target_left_elbow;
-    GameObject[] target_left_upperarm;
-    GameObject[] target_right_hand;
-    GameObject[] target_right_elbow;
-    GameObject[] target_right_upperarm;
+    // ターゲットオブジェクトの定義と初期化
+    GameObject target_left_hand;
+    GameObject target_left_elbow;
+    GameObject target_left_upperarm;
+    GameObject target_right_hand;
+    GameObject target_right_elbow;
+    GameObject target_right_upperarm;
     // 足
-    GameObject[] target_left_foot;
-    GameObject[] target_left_knee;
-    GameObject[] target_left_upperleg;
-    GameObject[] target_right_foot;
-    GameObject[] target_right_knee;
-    GameObject[] target_right_upperleg;
+    GameObject target_left_foot;
+    GameObject target_left_knee;
+    GameObject target_left_upperleg;
+    GameObject target_right_foot;
+    GameObject target_right_knee;
+    GameObject target_right_upperleg;
     // 胴体
-    GameObject[] target_body_lookat;
-    GameObject[] target_head;
-    GameObject[] target_neck;
-    GameObject[] target_spine;
-    GameObject[] target_hips;
+    GameObject target_body_lookat;
+    GameObject target_head;
+    GameObject target_neck;
+    GameObject target_spine;
+    GameObject target_hips;
 
     //骨格jsonファイル
     //Json skeleton data読み出し
@@ -51,7 +51,7 @@ public class PlayerIKTarget : MonoBehaviour
         "hulaDanceSymmetry.json"
     };
     
-    //人数
+    //アセットのナンバリング
     public int numberOfPerson = 0;
     //フォーメーション
     public int formationType = 0;
@@ -64,7 +64,6 @@ public class PlayerIKTarget : MonoBehaviour
     public float time_update_interval=0.01f; //フレームアップデートタイミング
     private float timeElapsed = 0.0f; //前フレーム描画からの経過時間
     public Dictionary<string, object> json_data = new Dictionary<string, object>(); //
-
     private Dictionary<string,Vector3> skeleton_coord = new Dictionary<string, Vector3>(); //
     private Dictionary<string,float> skeleton_length = new Dictionary<string,float>(); //関節の長さ
 
@@ -118,25 +117,6 @@ public class PlayerIKTarget : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
-        // ターゲットオブジェクトの初期化
-        target_left_hand = new GameObject[numberOfPerson];
-        target_left_elbow = new GameObject[numberOfPerson];
-        target_left_upperarm = new GameObject[numberOfPerson];
-        target_right_hand = new GameObject[numberOfPerson];
-        target_right_elbow = new GameObject[numberOfPerson];
-        target_right_upperarm = new GameObject[numberOfPerson];
-        target_left_foot = new GameObject[numberOfPerson];
-        target_left_knee = new GameObject[numberOfPerson];
-        target_left_upperleg = new GameObject[numberOfPerson];
-        target_right_foot = new GameObject[numberOfPerson];
-        target_right_knee = new GameObject[numberOfPerson];
-        target_right_upperleg = new GameObject[numberOfPerson];
-        target_body_lookat = new GameObject[numberOfPerson];
-        target_head = new GameObject[numberOfPerson];
-        target_neck = new GameObject[numberOfPerson];
-        target_spine = new GameObject[numberOfPerson];
-        target_hips = new GameObject[numberOfPerson];
-
         this.animator = GetComponent<Animator>();
         // this.init_hips_y = animator.GetBoneTransform(HumanBodyBones.Hips).transform.position.y;
         // this.animator.transform.position = new Vector3(0,0.5f,0);
@@ -152,28 +132,26 @@ public class PlayerIKTarget : MonoBehaviour
         //TODO: ENUM型?
         //体幹のIKターゲット
         //this.target_body_lookat = GameObject.Find("BodyLookAtTarget");
-        for (int i = 0; i < numberOfPerson; i++) {
-            this.target_neck[i] = GameObject.Find("NeckTarget" + (i + 1));
-            this.target_spine[i] = GameObject.Find("SpineTarget" + (i + 1));
-            this.target_hips[i] = GameObject.Find("HipsTarget" + (i + 1));
-            this.target_head[i] = GameObject.Find("HeadTarget" + (i + 1));
-            // Right arm IK targets
-            this.target_right_upperarm[i] = GameObject.Find("RightUpperArmTarget" + (i + 1));
-            this.target_right_elbow[i] = GameObject.Find("RightElbowTarget" + (i + 1));
-            this.target_right_hand[i] = GameObject.Find("RightHandTarget" + (i + 1));
-            // Left arm IK targets
-            this.target_left_upperarm[i] = GameObject.Find("LeftUpperArmTarget" + (i + 1));
-            this.target_left_elbow[i] = GameObject.Find("LeftElbowTarget" + (i + 1));
-            this.target_left_hand[i] = GameObject.Find("LeftHandTarget" + (i + 1));
-            // Right leg IK targets
-            this.target_right_upperleg[i] = GameObject.Find("RightUpperLegTarget" + (i + 1));
-            this.target_right_knee[i] = GameObject.Find("RightKneeTarget" + (i + 1));
-            this.target_right_foot[i] = GameObject.Find("RightFootTarget" + (i + 1));
-            // Left leg IK targets
-            this.target_left_upperleg[i] = GameObject.Find("LeftUpperLegTarget" + (i + 1));
-            this.target_left_knee[i] = GameObject.Find("LeftKneeTarget" + (i + 1));
-            this.target_left_foot[i] = GameObject.Find("LeftFootTarget" + (i + 1));
-        }
+        this.target_neck = GameObject.Find("NeckTarget" + (numberOfPerson));
+        this.target_spine = GameObject.Find("SpineTarget" + (numberOfPerson));
+        this.target_hips = GameObject.Find("HipsTarget" + (numberOfPerson));
+        this.target_head = GameObject.Find("HeadTarget" + (numberOfPerson));
+        // Right arm IK targets
+        this.target_right_upperarm = GameObject.Find("RightUpperArmTarget" + (numberOfPerson));
+        this.target_right_elbow = GameObject.Find("RightElbowTarget" + (numberOfPerson));
+        this.target_right_hand = GameObject.Find("RightHandTarget" + (numberOfPerson));
+        // Left arm IK targets
+        this.target_left_upperarm = GameObject.Find("LeftUpperArmTarget" + (numberOfPerson));
+        this.target_left_elbow = GameObject.Find("LeftElbowTarget" + (numberOfPerson));
+        this.target_left_hand = GameObject.Find("LeftHandTarget" + (numberOfPerson));
+        // Right leg IK targets
+        this.target_right_upperleg = GameObject.Find("RightUpperLegTarget" + (numberOfPerson));
+        this.target_right_knee = GameObject.Find("RightKneeTarget" + (numberOfPerson));
+        this.target_right_foot = GameObject.Find("RightFootTarget" + (numberOfPerson));
+        // Left leg IK targets
+        this.target_left_upperleg = GameObject.Find("LeftUpperLegTarget" + (numberOfPerson));
+        this.target_left_knee = GameObject.Find("LeftKneeTarget" + (numberOfPerson));
+        this.target_left_foot = GameObject.Find("LeftFootTarget" + (numberOfPerson));
 
         //
         //3d humanoid modelの関節オブジェクト取得
@@ -233,23 +211,38 @@ public class PlayerIKTarget : MonoBehaviour
             Debug.Log ("Dictionary:" + pair.Key + " : " + pair.Value);
         }
 
-        //ココ書き換える
-        //string datapath = "Assets/Resources/hulaDance.json";
+        // datapathを作成
         string datapath = "Assets/Resources/";
+        //通常
         if (!isSymmetry) {
+            //ココ書き換える
             datapath = datapath + json_file_name[7];
+        //対称
         }else{
+            //ココ書き換える
             datapath = datapath + json_file_name[8];
         }
-        Debug.Log("path: "+ datapath);
-        StreamReader reader = new StreamReader(datapath); //受け取ったパスのファイルを読み込む
-        string datastr = reader.ReadToEnd();//ファイルの中身をstring型としてすべて読み込む
-        reader.Close();//ファイルを閉じる
-        json_data= Json.Deserialize(datastr) as Dictionary<string, object>;
-        Debug.Log("json_data count:"+json_data.Count);
+        Debug.Log("path: " + datapath);
+
+        // JSONファイルを読み込む
+        using (StreamReader reader = new StreamReader(datapath))
+        {
+            string datastr = reader.ReadToEnd(); // ファイルの中身をstring型としてすべて読み込む
+            // JSONデータを解析してDictionaryに変換し、json_dataの各要素に代入
+            json_data = Json.Deserialize(datastr) as Dictionary<string, object>;
+
+            // json_dataがnullでない場合、正常に読み込まれたことを確認し、そのデータの件数をログに出力
+            if (json_data != null)
+            {
+                Debug.Log("json_data count:" + json_data.Count);
+            }
+            else
+            {
+                Debug.LogError("Failed to parse JSON data");
+            }
+        }
         current_frame_id = 0;
         FRAME_NUM = json_data.Count;
-
     }
 
     /// <summary>
@@ -300,7 +293,6 @@ public class PlayerIKTarget : MonoBehaviour
                 float y = (float)Convert.ToDouble(coord[1]);
                 float z = (float)Convert.ToDouble(coord[2]);
                 Vector3 v = new Vector3(x, y, z);
-                //Vector3 v = new Vector3(-x, y, -z);
                 this.skeleton_coord[pos_name] = v;
             }
         }
@@ -528,80 +520,87 @@ public class PlayerIKTarget : MonoBehaviour
     }
 
     //各部位にポジションをセット
-    void SetPositions(string key, GameObject[] targets, Dictionary<string, Vector3> calibratedCoords) {
-        for (int i = 0; i < targets.Length; i++) {
-            Vector3 pos = calibratedCoords[key];
+    void SetPositions(string key, GameObject targets, Dictionary<string, Vector3> calibratedCoords) {
+        Vector3 pos = calibratedCoords[key];
 
-            if (formationType == 1) {
-                pos += RowCalculateOffset(i);
-            } else if(formationType == 2){
-                pos += PyramidCalculateOffset(i);
-            } else if(formationType == 3){
-                pos += SquareCalculateOffset(i);
-            } else if(formationType == 4){
-                pos += TrapeziumCalculateOffset(i);
-            } else if(formationType == 5){
-                pos += CircleCalculateOffset(i);
-            }
+        if (formationType == 1) {
+            pos += RowCalculateOffset(numberOfPerson);
+        } else if(formationType == 2){
+            pos += PyramidCalculateOffset(numberOfPerson);
+        } else if(formationType == 3){
+            pos += SquareCalculateOffset(numberOfPerson);
+        } else if(formationType == 4){
+                pos += TrapeziumCalculateOffset(numberOfPerson);
+        } else if(formationType == 5){
+            pos += CircleCalculateOffset(numberOfPerson);
+        }
             
-            targets[i].transform.position = pos;
+        targets.transform.position = pos;
+        
+        Vector3 RowCalculateOffset(int i) {
+            if (i == 1) {
+                return new Vector3(0, 0, 0);   
+            }else if (i == 2) {
+                return new Vector3(0, 0, 2);   
+            }else if (i == 3) {
+                return new Vector3(0, 0, -2);   
+            }else if (i == 4) {
+                return new Vector3(0, 0, 4);
+            }else {
+                return new Vector3(0, 0, -4);   
+            }
         }
-    }
-    Vector3 RowCalculateOffset(int i) {
-        return new Vector3(0, 0, (i % 2 == 0) ? (-2 * (i / 2)) : (2 * ((i + 1) / 2)));   
-    }
-    Vector3 PyramidCalculateOffset(int i) {
-        if (i == 0) {
-            return new Vector3(2, 0, (i % 2 == 0) ? (-2 * (i / 2)) : (2 * ((i + 1) / 2)));   
-        }else if (i == 1) {
-            return new Vector3(0, 0, (i % 2 == 0) ? (-2 * (i / 2)) : (2 * ((i + 1) / 2)));   
-        }else if (i == 2) {
-            return new Vector3(0, 0, (i % 2 == 0) ? (-2 * (i / 2)) : (2 * ((i + 1) / 2)));   
-        }else if (i == 3) {
-            return new Vector3(-2, 0, (i % 2 == 0) ? (-2 * (i / 2)) : (2 * ((i + 1) / 2)));   
-        }else {
-            return new Vector3(-2, 0, (i % 2 == 0) ? (-2 * (i / 2)) : (2 * ((i + 1) / 2)));   
+        Vector3 PyramidCalculateOffset(int i) {
+            if (i == 1) {
+                return new Vector3(2, 0, 0);   
+            }else if (i == 2) {
+                return new Vector3(0, 0, 2);   
+            }else if (i == 3) {
+                return new Vector3(0, 0, -2);   
+            }else if (i == 4) {
+                return new Vector3(-2, 0, 4);
+            }else {
+                return new Vector3(-2, 0, -4);   
+            }
         }
-    }
-
-    Vector3 SquareCalculateOffset(int i) {
-        if (i == 0) {
-            return new Vector3(0, 0, 0);   
-        }else if (i == 1) {
-            return new Vector3(2, 0, 2);      
-        }else if (i == 2) {
-            return new Vector3(2, 0, -2);     
-        }else if (i == 3) {
-            return new Vector3(-2, 0, 2);      
-        }else {
-            return new Vector3(-2, 0, -2);   
+        Vector3 SquareCalculateOffset(int i) {
+            if (i == 1) {
+                return new Vector3(0, 0, 0);   
+            }else if (i == 2) {
+                return new Vector3(2, 0, 2);      
+            }else if (i == 3) {
+                return new Vector3(2, 0, -2);     
+            }else if (i == 4) {
+                return new Vector3(-2, 0, 2);      
+            }else {
+                return new Vector3(-2, 0, -2);   
+            }
         }
-    }
-    Vector3 TrapeziumCalculateOffset(int i) {
-        if (i == 0) {
-            return new Vector3(0, 0, 0);   
-        }else if (i == 1) {
-            return new Vector3(1, 0, 1);      
-        }else if (i == 2) {
-            return new Vector3(1, 0, -1);     
-        }else if (i == 3) {
-            return new Vector3(-1, 0, 2);      
-        }else {
-            return new Vector3(-1, 0, -2);   
+        Vector3 TrapeziumCalculateOffset(int i) {
+            if (i == 1) {
+                return new Vector3(0, 0, 0);   
+            }else if (i == 2) {
+                return new Vector3(1, 0, 1);      
+            }else if (i == 3) {
+                return new Vector3(1, 0, -1);     
+            }else if (i == 4) {
+                return new Vector3(-1, 0, 2);      
+            }else {
+                return new Vector3(-1, 0, -2);   
+            }
         }
-    }
-    Vector3 CircleCalculateOffset(int i) {
-        if (i == 0) {
-            return new Vector3(-2, 0, 0);   
-        }else if (i == 1) {
-            return new Vector3(2, 0, 1);      
-        }else if (i == 2) {
-            return new Vector3(2, 0, -1);     
-        }else if (i == 3) {
-            return new Vector3(0, 0, 2);      
-        }else {
-            return new Vector3(0, 0, -2);   
+        Vector3 CircleCalculateOffset(int i) {
+            if (i == 1) {
+                return new Vector3(-2, 0, 0);   
+            }else if (i == 2) {
+                return new Vector3(2, 0, 1);      
+            }else if (i == 3) {
+                return new Vector3(2, 0, -1);     
+            }else if (i == 4) {
+                return new Vector3(0, 0, 2);      
+            }else {
+                return new Vector3(0, 0, -2);   
+            }
         }
     }
 }
-

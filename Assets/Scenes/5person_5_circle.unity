@@ -2662,7 +2662,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPerson: 5
+  json_file_name:
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
+  numberOfPerson: 1
   formationType: 5
   isSymmetry: 0
   FRAME_NUM: 0
@@ -3411,9 +3421,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPerson: 5
+  json_file_name:
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
+  numberOfPerson: 4
   formationType: 5
-  isSymmetry: 0
+  isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -11956,6 +11976,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  json_file_name:
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
   numberOfPerson: 5
   formationType: 5
   isSymmetry: 0
@@ -14606,7 +14636,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPerson: 5
+  json_file_name:
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
+  numberOfPerson: 3
   formationType: 5
   isSymmetry: 0
   FRAME_NUM: 0
@@ -18400,9 +18440,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPerson: 5
+  json_file_name:
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
+  numberOfPerson: 2
   formationType: 5
-  isSymmetry: 0
+  isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
