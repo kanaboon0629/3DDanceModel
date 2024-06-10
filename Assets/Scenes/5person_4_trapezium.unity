@@ -3331,7 +3331,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPerson: 5
+  json_file_name:
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
+  numberOfPerson: 4
   formationType: 4
   isSymmetry: 1
   FRAME_NUM: 0
@@ -3453,7 +3463,7 @@ MonoBehaviour:
   Root: {fileID: 307479797}
   Solution: []
   SelectedSegment: {fileID: 1266978775}
-  Scroll: {x: 0, y: 1020.00024}
+  Scroll: {x: 0, y: 1468.9993}
 --- !u!114 &307479800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11541,6 +11551,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  json_file_name:
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
   numberOfPerson: 5
   formationType: 4
   isSymmetry: 0
@@ -14869,7 +14889,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPerson: 5
+  json_file_name:
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
+  numberOfPerson: 3
   formationType: 4
   isSymmetry: 0
   FRAME_NUM: 0
@@ -19195,7 +19225,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPerson: 5
+  json_file_name:
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
+  numberOfPerson: 1
   formationType: 4
   isSymmetry: 0
   FRAME_NUM: 0
@@ -19428,7 +19468,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPerson: 5
+  json_file_name:
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
+  numberOfPerson: 2
   formationType: 4
   isSymmetry: 1
   FRAME_NUM: 0

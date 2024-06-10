@@ -2671,7 +2671,7 @@ MonoBehaviour:
   - jyp3.json
   - matt_AllIWannaDo.json
   - hulaDance_U4P4u6eSIHw_si=5XCbThpCddUNiwRs_220_243.json
-  numberOfPerson: 5
+  numberOfPerson: 1
   formationType: 1
   isSymmetry: 0
   FRAME_NUM: 0
@@ -3429,7 +3429,7 @@ MonoBehaviour:
   - jyp3.json
   - matt_AllIWannaDo.json
   - hulaDance_U4P4u6eSIHw_si=5XCbThpCddUNiwRs_220_243.json
-  numberOfPerson: 5
+  numberOfPerson: 4
   formationType: 1
   isSymmetry: 0
   FRAME_NUM: 0
@@ -14642,7 +14642,7 @@ MonoBehaviour:
   - jyp3.json
   - matt_AllIWannaDo.json
   - hulaDance_U4P4u6eSIHw_si=5XCbThpCddUNiwRs_220_243.json
-  numberOfPerson: 5
+  numberOfPerson: 3
   formationType: 1
   isSymmetry: 0
   FRAME_NUM: 0
@@ -18445,7 +18445,7 @@ MonoBehaviour:
   - jyp3.json
   - matt_AllIWannaDo.json
   - hulaDance_U4P4u6eSIHw_si=5XCbThpCddUNiwRs_220_243.json
-  numberOfPerson: 5
+  numberOfPerson: 2
   formationType: 1
   isSymmetry: 0
   FRAME_NUM: 0
