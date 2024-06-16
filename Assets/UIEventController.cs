@@ -32,17 +32,17 @@ public class UIEventController : MonoBehaviour
 
        avatar_model_object = GameObject.Find("unitychan");
        playerIKTarget = avatar_model_object.GetComponent<PlayerIKTarget>();
-       json_file_name_array = playerIKTarget.json_file_name;
+       //json_file_name_array = playerIKTarget.json_file_name;
        init_dropdown();
    }
 
    public void init_dropdown(){
         List<string> optionlist = new List<string>();
 
-        foreach(var file_name in json_file_name_array){
-            // Debug.Log("Skeleton coord file name : " + file_name);
-            optionlist.Add(file_name);
-        }
+        // foreach(var file_name in json_file_name_array){
+        //     // Debug.Log("Skeleton coord file name : " + file_name);
+        //     optionlist.Add(file_name);
+        // }
 
         //一度すべてのOptionsをクリア
         ddtmp.ClearOptions();

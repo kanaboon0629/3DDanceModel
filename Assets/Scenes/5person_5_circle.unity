@@ -2663,20 +2663,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   json_file_name:
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed_3times.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal_postprocessed_3times.json
-  - skeleton_coord_ATP2020_02_30_Andy_Murray.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed_3times.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
-  - skeleton_coord_ATP2020_04_48_David_Goffin.json
-  - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
+  numberOfPerson: 1
+  formationType: 5
+  isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -3424,20 +3422,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   json_file_name:
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed_3times.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal_postprocessed_3times.json
-  - skeleton_coord_ATP2020_02_30_Andy_Murray.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed_3times.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
-  - skeleton_coord_ATP2020_04_48_David_Goffin.json
-  - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
+  numberOfPerson: 4
+  formationType: 5
+  isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -11981,20 +11977,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   json_file_name:
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed_3times.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal_postprocessed_3times.json
-  - skeleton_coord_ATP2020_02_30_Andy_Murray.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed_3times.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
-  - skeleton_coord_ATP2020_04_48_David_Goffin.json
-  - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
+  numberOfPerson: 5
+  formationType: 5
+  isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -12114,7 +12108,7 @@ MonoBehaviour:
   Root: {fileID: 867130854}
   Solution: []
   SelectedSegment: {fileID: 750605690}
-  Scroll: {x: 1, y: 1020.00024}
+  Scroll: {x: 0, y: 1020.00024}
 --- !u!114 &867130857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14643,20 +14637,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   json_file_name:
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed_3times.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal_postprocessed_3times.json
-  - skeleton_coord_ATP2020_02_30_Andy_Murray.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed_3times.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
-  - skeleton_coord_ATP2020_04_48_David_Goffin.json
-  - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
+  numberOfPerson: 3
+  formationType: 5
+  isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -18449,20 +18441,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   json_file_name:
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed_3times.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal_postprocessed_3times.json
-  - skeleton_coord_ATP2020_02_30_Andy_Murray.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed_3times.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
-  - skeleton_coord_ATP2020_04_48_David_Goffin.json
-  - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  - dance1.json
+  - momo_likey.json
+  - jyp.json
+  - jyp2.json
+  - jyp2New.json
+  - jyp3.json
+  - matt_AllIWannaDo.json
+  - hulaDance.json
+  - hulaDanceSymmetry.json
+  numberOfPerson: 2
+  formationType: 5
+  isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01

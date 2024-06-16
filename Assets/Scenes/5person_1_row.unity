@@ -2644,7 +2644,7 @@ MonoBehaviour:
   Root: {fileID: 215580838}
   Solution: []
   SelectedSegment: {fileID: 1628517983}
-  Scroll: {x: 1, y: 1020.00024}
+  Scroll: {x: 0, y: 1020.00024}
 --- !u!4 &215580834 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
@@ -2662,22 +2662,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formationType: 0
-  json_file_name:
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed_3times.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal_postprocessed_3times.json
-  - skeleton_coord_ATP2020_02_30_Andy_Murray.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed_3times.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
-  - skeleton_coord_ATP2020_04_48_David_Goffin.json
-  - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  jsonFileName: jyp2.json
+  numberOfPerson: 1
+  formationType: 1
+  isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -3424,22 +3412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formationType: 0
-  json_file_name:
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed_3times.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal_postprocessed_3times.json
-  - skeleton_coord_ATP2020_02_30_Andy_Murray.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed_3times.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
-  - skeleton_coord_ATP2020_04_48_David_Goffin.json
-  - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  jsonFileName: jyp2.json
+  numberOfPerson: 4
+  formationType: 1
+  isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -9941,7 +9917,7 @@ MonoBehaviour:
   Target: {fileID: 561581812}
   TPX: -0.29164236783981323
   TPY: 1.2566924095153809
-  TPZ: 8.116816520690918
+  TPZ: -3.883183240890503
   MaximumError: 0.001
 --- !u!114 &750605692
 MonoBehaviour:
@@ -11982,22 +11958,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formationType: 0
-  json_file_name:
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed_3times.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal_postprocessed_3times.json
-  - skeleton_coord_ATP2020_02_30_Andy_Murray.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed_3times.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
-  - skeleton_coord_ATP2020_04_48_David_Goffin.json
-  - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  jsonFileName: jyp2.json
+  numberOfPerson: 5
+  formationType: 1
+  isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -14645,22 +14609,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formationType: 0
-  json_file_name:
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed_3times.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal_postprocessed_3times.json
-  - skeleton_coord_ATP2020_02_30_Andy_Murray.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed_3times.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
-  - skeleton_coord_ATP2020_04_48_David_Goffin.json
-  - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  jsonFileName: jyp2.json
+  numberOfPerson: 3
+  formationType: 1
+  isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -18452,22 +18404,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formationType: 0
-  json_file_name:
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed.json
-  - skeleton_coord_ATP2020_00_47_Novak_Djokovic_postprocessed_3times.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal.json
-  - skeleton_coord_ATP2020_01_48_Rafael_Nadal_postprocessed_3times.json
-  - skeleton_coord_ATP2020_02_30_Andy_Murray.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed.json
-  - skeleton_coord_ATP2020_03_00_Daniil_Medvedev_postprocessed_3times.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed.json
-  - skeleton_coord_ATP2020_03_45_Grigor_Dimitrov_postprocessed_3times.json
-  - skeleton_coord_ATP2020_04_48_David_Goffin.json
-  - skeleton_coord_ATP2020_05_18_Fernando_Verdasco.json
+  jsonFileName: jyp2.json
+  numberOfPerson: 2
+  formationType: 1
+  isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
