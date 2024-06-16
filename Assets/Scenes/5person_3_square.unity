@@ -2662,16 +2662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  json_file_name:
-  - dance1.json
-  - momo_likey.json
-  - jyp.json
-  - jyp2.json
-  - jyp2New.json
-  - jyp3.json
-  - matt_AllIWannaDo.json
-  - hulaDance.json
-  - hulaDanceSymmetry.json
+  jsonFileName: jyp2.json
   numberOfPerson: 1
   formationType: 3
   isSymmetry: 0
@@ -3421,16 +3412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  json_file_name:
-  - dance1.json
-  - momo_likey.json
-  - jyp.json
-  - jyp2.json
-  - jyp2New.json
-  - jyp3.json
-  - matt_AllIWannaDo.json
-  - hulaDance.json
-  - hulaDanceSymmetry.json
+  jsonFileName: jyp2.json
   numberOfPerson: 4
   formationType: 3
   isSymmetry: 1
@@ -11976,16 +11958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  json_file_name:
-  - dance1.json
-  - momo_likey.json
-  - jyp.json
-  - jyp2.json
-  - jyp2New.json
-  - jyp3.json
-  - matt_AllIWannaDo.json
-  - hulaDance.json
-  - hulaDanceSymmetry.json
+  jsonFileName: jyp2.json
   numberOfPerson: 5
   formationType: 3
   isSymmetry: 0
@@ -14636,16 +14609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  json_file_name:
-  - dance1.json
-  - momo_likey.json
-  - jyp.json
-  - jyp2.json
-  - jyp2New.json
-  - jyp3.json
-  - matt_AllIWannaDo.json
-  - hulaDance.json
-  - hulaDanceSymmetry.json
+  jsonFileName: jyp2.json
   numberOfPerson: 3
   formationType: 3
   isSymmetry: 0
@@ -18440,16 +18404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  json_file_name:
-  - dance1.json
-  - momo_likey.json
-  - jyp.json
-  - jyp2.json
-  - jyp2New.json
-  - jyp3.json
-  - matt_AllIWannaDo.json
-  - hulaDance.json
-  - hulaDanceSymmetry.json
+  jsonFileName: jyp2.json
   numberOfPerson: 2
   formationType: 3
   isSymmetry: 1

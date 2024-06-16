@@ -38,8 +38,7 @@ public class PlayerIKTarget : MonoBehaviour
 
     //骨格jsonファイル
     //Json skeleton data読み出し
-    //定義ごとコメントアウトしてビルドしないと書き換えられない！！！
-    public string[] json_file_name = new string[]{
+    private string[] json_file_name = new string[]{
         "dance1.json",
         "momo_likey.json",
         "jyp.json",
@@ -50,6 +49,8 @@ public class PlayerIKTarget : MonoBehaviour
         "hulaDance.json",
         "hulaDanceSymmetry.json"
     };
+
+    public string jsonFileName = "";
     
     //アセットのナンバリング
     public int numberOfPerson = 0;
@@ -75,7 +76,8 @@ public class PlayerIKTarget : MonoBehaviour
         get { return is_athlete_motion_play; }
         set { is_athlete_motion_play = value; }
     }
-
+    private SymmetryJsonProcessor processor = new SymmetryJsonProcessor();
+        
     /// <summary>
     /// 3D humanoidモデルの関節長を計算する
     /// </summary>
@@ -212,17 +214,28 @@ public class PlayerIKTarget : MonoBehaviour
         }
 
         // datapathを作成
-        string datapath = "Assets/Resources/";
+        string parentDatapath = "Assets/Resources/";
+        string datapath = "";
         //通常
         if (!isSymmetry) {
-            //ココ書き換える
-            datapath = datapath + json_file_name[7];
+            datapath = parentDatapath + jsonFileName;
+            
         //対称
         }else{
-            //ココ書き換える
-            datapath = datapath + json_file_name[8];
+            datapath = parentDatapath + jsonFileName.Replace(".json", "Symmetry.json");
         }
+        
         Debug.Log("path: " + datapath);
+
+        //通常ファイルはあるが対称ファイルがなかったときの処理
+        if (File.Exists(parentDatapath + jsonFileName) && !File.Exists(parentDatapath + jsonFileName.Replace(".json", "Symmetry.json")))
+        {
+            //対称ファイルの作成
+            string inputFilePath = parentDatapath + jsonFileName;
+            string outputFilePath = parentDatapath + jsonFileName.Replace(".json", "Symmetry.json");
+
+            SymmetryJsonProcessor.ProcessJson(inputFilePath, outputFilePath);
+        }
 
         // JSONファイルを読み込む
         using (StreamReader reader = new StreamReader(datapath))
