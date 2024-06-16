@@ -16,6 +16,7 @@ public class PlayerIKTarget : MonoBehaviour
 
     // IKのターゲットとなる関節のターゲットオブジェクト
     // ターゲットオブジェクトの定義と初期化
+    GameObject armature;
     GameObject target_left_hand;
     GameObject target_left_elbow;
     GameObject target_left_upperarm;
@@ -54,8 +55,6 @@ public class PlayerIKTarget : MonoBehaviour
     
     //アセットのナンバリング
     public int numberOfPerson = 0;
-    //フォーメーション
-    public int formationType = 0;
     //左右対称の有無
     public bool isSymmetry = false;
     public int FRAME_NUM = 0; //FRAME数
@@ -127,6 +126,9 @@ public class PlayerIKTarget : MonoBehaviour
         Debug.Log("Init_hips: " + this.init_hips_y);
 
         Debug.LogFormat("Time interval first:{0}",this.time_update_interval);
+
+        //人型アセットの取得
+        this.armature = GameObject.Find("Armature" + (numberOfPerson));
         
         //
         //3D Model Avatarを操作する際のIKのターゲットとなる関節オブジェクトの取得
@@ -397,9 +399,9 @@ public class PlayerIKTarget : MonoBehaviour
         //TODO : headの座標 3d humanoid modelへ反映
 
         //体幹
-        SetPositions("hips", this.target_hips, this.calibrated_skeleton_coord);
-        SetPositions("spine", this.target_spine, this.calibrated_skeleton_coord);
-        SetPositions("neck", this.target_neck, this.calibrated_skeleton_coord);
+        SetPositions("hips", this.armature, this.target_hips, this.calibrated_skeleton_coord);
+        SetPositions("spine", this.armature, this.target_spine, this.calibrated_skeleton_coord);
+        SetPositions("neck", this.armature, this.target_neck, this.calibrated_skeleton_coord);
 
         //
         //右腕の処理
@@ -431,9 +433,9 @@ public class PlayerIKTarget : MonoBehaviour
         //Debug.LogFormat("Right Upper Arm Object:{0}",this.target_right_upperarm);
         //Debug.LogFormat("Right Upper Arm Coord:{0}",this.calibrated_skeleton_coord["right_upperarm"]);
 
-        SetPositions("right_upperarm", this.target_right_upperarm, this.calibrated_skeleton_coord);
-        SetPositions("right_lowerarm", this.target_right_elbow, this.calibrated_skeleton_coord);
-        SetPositions("right_hand", this.target_right_hand, this.calibrated_skeleton_coord);
+        SetPositions("right_upperarm", this.armature, this.target_right_upperarm, this.calibrated_skeleton_coord);
+        SetPositions("right_lowerarm", this.armature, this.target_right_elbow, this.calibrated_skeleton_coord);
+        SetPositions("right_hand", this.armature, this.target_right_hand, this.calibrated_skeleton_coord);
 
         //左腕の処理
         // TODO: calibrated skeleton coordがおかしい
@@ -463,9 +465,9 @@ public class PlayerIKTarget : MonoBehaviour
         //Debug.LogFormat("Left Upper Arm Object:{0}",this.target_left_upperarm);
         //Debug.LogFormat("Left Upper Arm Coord:{0}",this.calibrated_skeleton_coord["left_upperarm"]);
 
-        SetPositions("left_upperarm", this.target_left_upperarm, this.calibrated_skeleton_coord);
-        SetPositions("left_lowerarm", this.target_left_elbow, this.calibrated_skeleton_coord);
-        SetPositions("left_hand", this.target_left_hand, this.calibrated_skeleton_coord);
+        SetPositions("left_upperarm", this.armature, this.target_left_upperarm, this.calibrated_skeleton_coord);
+        SetPositions("left_lowerarm", this.armature, this.target_left_elbow, this.calibrated_skeleton_coord);
+        SetPositions("left_hand", this.armature, this.target_left_hand, this.calibrated_skeleton_coord);
 
         //右足位置、スケーリング
         this.calibrated_skeleton_coord["right_upperleg"] = get_calibrated_target_position(
@@ -487,9 +489,9 @@ public class PlayerIKTarget : MonoBehaviour
             pred_joint_end    : this.skeleton_coord["right_foot"]
         );
 
-        SetPositions("right_upperleg", this.target_right_upperleg, this.calibrated_skeleton_coord);
-        SetPositions("right_lowerleg", this.target_right_knee, this.calibrated_skeleton_coord);
-        SetPositions("right_foot", this.target_right_foot, this.calibrated_skeleton_coord);
+        SetPositions("right_upperleg", this.armature, this.target_right_upperleg, this.calibrated_skeleton_coord);
+        SetPositions("right_lowerleg", this.armature, this.target_right_knee, this.calibrated_skeleton_coord);
+        SetPositions("right_foot", this.armature, this.target_right_foot, this.calibrated_skeleton_coord);
 
         //左足位置、スケーリング
         this.calibrated_skeleton_coord["left_upperleg"] = get_calibrated_target_position(
@@ -512,9 +514,9 @@ public class PlayerIKTarget : MonoBehaviour
         );
         //Debug.LogFormat("calibrated_skeleton_coord left_lowerleg:{0}",this.calibrated_skeleton_coord["left_lowerleg"]);
 
-        SetPositions("left_upperleg", this.target_left_upperleg, this.calibrated_skeleton_coord);
-        SetPositions("left_lowerleg", this.target_left_knee, this.calibrated_skeleton_coord);
-        SetPositions("left_foot", this.target_left_foot, this.calibrated_skeleton_coord);
+        SetPositions("left_upperleg", this.armature ,this.target_left_upperleg, this.calibrated_skeleton_coord);
+        SetPositions("left_lowerleg", this.armature, this.target_left_knee, this.calibrated_skeleton_coord);
+        SetPositions("left_foot", this.armature, this.target_left_foot, this.calibrated_skeleton_coord);
     }
 
     // Update is called once per frame
@@ -533,87 +535,8 @@ public class PlayerIKTarget : MonoBehaviour
     }
 
     //各部位にポジションをセット
-    void SetPositions(string key, GameObject targets, Dictionary<string, Vector3> calibratedCoords) {
+    void SetPositions(string key, GameObject armature, GameObject targets, Dictionary<string, Vector3> calibratedCoords) {
         Vector3 pos = calibratedCoords[key];
-
-        if (formationType == 1) {
-            pos += RowCalculateOffset(numberOfPerson);
-        } else if(formationType == 2){
-            pos += PyramidCalculateOffset(numberOfPerson);
-        } else if(formationType == 3){
-            pos += SquareCalculateOffset(numberOfPerson);
-        } else if(formationType == 4){
-                pos += TrapeziumCalculateOffset(numberOfPerson);
-        } else if(formationType == 5){
-            pos += CircleCalculateOffset(numberOfPerson);
-        }
-            
-        targets.transform.position = pos;
-        
-        Vector3 RowCalculateOffset(int i) {
-            if (i == 1) {
-                return new Vector3(0, 0, 0);   
-            }else if (i == 2) {
-                return new Vector3(0, 0, 2);   
-            }else if (i == 3) {
-                return new Vector3(0, 0, -2);   
-            }else if (i == 4) {
-                return new Vector3(0, 0, 4);
-            }else {
-                return new Vector3(0, 0, -4);   
-            }
-        }
-        Vector3 PyramidCalculateOffset(int i) {
-            if (i == 1) {
-                return new Vector3(2, 0, 0);   
-            }else if (i == 2) {
-                return new Vector3(0, 0, 2);   
-            }else if (i == 3) {
-                return new Vector3(0, 0, -2);   
-            }else if (i == 4) {
-                return new Vector3(-2, 0, 4);
-            }else {
-                return new Vector3(-2, 0, -4);   
-            }
-        }
-        Vector3 SquareCalculateOffset(int i) {
-            if (i == 1) {
-                return new Vector3(0, 0, 0);   
-            }else if (i == 2) {
-                return new Vector3(2, 0, 2);      
-            }else if (i == 3) {
-                return new Vector3(2, 0, -2);     
-            }else if (i == 4) {
-                return new Vector3(-2, 0, 2);      
-            }else {
-                return new Vector3(-2, 0, -2);   
-            }
-        }
-        Vector3 TrapeziumCalculateOffset(int i) {
-            if (i == 1) {
-                return new Vector3(0, 0, 0);   
-            }else if (i == 2) {
-                return new Vector3(1, 0, 1);      
-            }else if (i == 3) {
-                return new Vector3(1, 0, -1);     
-            }else if (i == 4) {
-                return new Vector3(-1, 0, 2);      
-            }else {
-                return new Vector3(-1, 0, -2);   
-            }
-        }
-        Vector3 CircleCalculateOffset(int i) {
-            if (i == 1) {
-                return new Vector3(-2, 0, 0);   
-            }else if (i == 2) {
-                return new Vector3(2, 0, 1);      
-            }else if (i == 3) {
-                return new Vector3(2, 0, -1);     
-            }else if (i == 4) {
-                return new Vector3(0, 0, 2);      
-            }else {
-                return new Vector3(0, 0, -2);   
-            }
-        }
+        targets.transform.position = pos += armature.transform.position;
     }
 }
