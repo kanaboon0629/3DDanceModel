@@ -63,6 +63,7 @@
      <Compile Include="Assets/UIEventController.cs" />
      <Compile Include="Assets/StarterAssets/ThirdPersonController/Scripts/BasicRigidBodyPush.cs" />
      <Compile Include="Assets/StarterAssets/TutorialInfo/Scripts/Readme.cs" />
+     <Compile Include="Assets/CreateSymmetryJSON.cs" />
      <Compile Include="Assets/BioIK/Setup/BioJoint.cs" />
      <Compile Include="Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" />
      <Compile Include="Assets/BioIK/Setup/BioObjective.cs" />
