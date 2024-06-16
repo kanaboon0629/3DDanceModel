@@ -2662,15 +2662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  json_file_name:
-  - dance1.json
-  - momo_likey.json
-  - jyp.json
-  - jyp2.json
-  - jyp2New.json
-  - jyp3.json
-  - matt_AllIWannaDo.json
-  - hulaDance_U4P4u6eSIHw_si=5XCbThpCddUNiwRs_220_243.json
+  jsonFileName: jyp2.json
   numberOfPerson: 1
   formationType: 1
   isSymmetry: 0
@@ -3420,18 +3412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  json_file_name:
-  - dance1.json
-  - momo_likey.json
-  - jyp.json
-  - jyp2.json
-  - jyp2New.json
-  - jyp3.json
-  - matt_AllIWannaDo.json
-  - hulaDance_U4P4u6eSIHw_si=5XCbThpCddUNiwRs_220_243.json
+  jsonFileName: jyp2.json
   numberOfPerson: 4
   formationType: 1
-  isSymmetry: 0
+  isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
@@ -9933,7 +9917,7 @@ MonoBehaviour:
   Target: {fileID: 561581812}
   TPX: -0.29164236783981323
   TPY: 1.2566924095153809
-  TPZ: 8.116816520690918
+  TPZ: -3.883183240890503
   MaximumError: 0.001
 --- !u!114 &750605692
 MonoBehaviour:
@@ -11974,15 +11958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  json_file_name:
-  - dance1.json
-  - momo_likey.json
-  - jyp.json
-  - jyp2.json
-  - jyp2New.json
-  - jyp3.json
-  - matt_AllIWannaDo.json
-  - hulaDance_U4P4u6eSIHw_si=5XCbThpCddUNiwRs_220_243.json
+  jsonFileName: jyp2.json
   numberOfPerson: 5
   formationType: 1
   isSymmetry: 0
@@ -14633,15 +14609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  json_file_name:
-  - dance1.json
-  - momo_likey.json
-  - jyp.json
-  - jyp2.json
-  - jyp2New.json
-  - jyp3.json
-  - matt_AllIWannaDo.json
-  - hulaDance_U4P4u6eSIHw_si=5XCbThpCddUNiwRs_220_243.json
+  jsonFileName: jyp2.json
   numberOfPerson: 3
   formationType: 1
   isSymmetry: 0
@@ -18436,18 +18404,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4f0d242fb64a14692dea4ac4ff6852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  json_file_name:
-  - dance1.json
-  - momo_likey.json
-  - jyp.json
-  - jyp2.json
-  - jyp2New.json
-  - jyp3.json
-  - matt_AllIWannaDo.json
-  - hulaDance_U4P4u6eSIHw_si=5XCbThpCddUNiwRs_220_243.json
+  jsonFileName: jyp2.json
   numberOfPerson: 2
   formationType: 1
-  isSymmetry: 0
+  isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
   init_time_update_interval: 0.01
