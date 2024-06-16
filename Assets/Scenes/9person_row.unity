@@ -223,7 +223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.y
@@ -513,7 +513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.y
@@ -521,7 +521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2644,7 +2644,7 @@ MonoBehaviour:
   Root: {fileID: 215580838}
   Solution: []
   SelectedSegment: {fileID: 1628517983}
-  Scroll: {x: 1, y: 1020.00024}
+  Scroll: {x: 0, y: 1020.00024}
 --- !u!4 &215580834 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
@@ -2664,7 +2664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 1
-  formationType: 5
+  formationType: 1
   isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
@@ -3414,7 +3414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 4
-  formationType: 5
+  formationType: 1
   isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
@@ -7256,7 +7256,7 @@ MonoBehaviour:
   Segment: {fileID: 555955259}
   Weight: 1
   Target: {fileID: 1712255663}
-  TPX: 2.0473575592041016
+  TPX: 0.04735763370990753
   TPY: 1.6036922931671143
   TPZ: 1.9758167266845703
   MaximumError: 0.001
@@ -9917,7 +9917,7 @@ MonoBehaviour:
   Target: {fileID: 561581812}
   TPX: -0.29164236783981323
   TPY: 1.2566924095153809
-  TPZ: -1.883183240890503
+  TPZ: -3.883183240890503
   MaximumError: 0.001
 --- !u!114 &750605692
 MonoBehaviour:
@@ -10626,7 +10626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10634,7 +10634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11960,7 +11960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 5
-  formationType: 5
+  formationType: 1
   isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
@@ -12081,7 +12081,7 @@ MonoBehaviour:
   Root: {fileID: 867130854}
   Solution: []
   SelectedSegment: {fileID: 750605690}
-  Scroll: {x: 0, y: 1020.00024}
+  Scroll: {x: 1, y: 1020.00024}
 --- !u!114 &867130857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14611,7 +14611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 3
-  formationType: 5
+  formationType: 1
   isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
@@ -17667,7 +17667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17675,7 +17675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18406,7 +18406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 2
-  formationType: 5
+  formationType: 1
   isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
@@ -19053,7 +19053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19061,7 +19061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalRotation.w
