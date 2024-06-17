@@ -65,6 +65,7 @@
      <Compile Include="Assets/StarterAssets/TutorialInfo/Scripts/Readme.cs" />
      <Compile Include="Assets/CreateSymmetryJSON.cs" />
      <Compile Include="Assets/BioIK/Setup/BioJoint.cs" />
+     <Compile Include="Assets/StridedTransformer/PythonRunner.cs" />
      <Compile Include="Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" />
      <Compile Include="Assets/BioIK/Setup/BioObjective.cs" />
      <Compile Include="Assets/BioIK/Demo/Scripts/MouseDrag.cs" />
@@ -732,11 +733,11 @@
     <Reference Include="Unity.Searcher.Editor">
         <HintPath>/Users/kanakokunii/3DDanceModel/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-        <HintPath>/Users/kanakokunii/3DDanceModel/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
         <HintPath>/Users/kanakokunii/3DDanceModel/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Scripting.Python.Editor">
+        <HintPath>/Users/kanakokunii/3DDanceModel/Library/ScriptAssemblies/Unity.Scripting.Python.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
         <HintPath>/Users/kanakokunii/3DDanceModel/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
@@ -761,6 +762,9 @@
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
         <HintPath>/Users/kanakokunii/3DDanceModel/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+        <HintPath>/Users/kanakokunii/3DDanceModel/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
         <HintPath>/Users/kanakokunii/3DDanceModel/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
