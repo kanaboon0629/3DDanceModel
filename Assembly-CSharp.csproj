@@ -65,7 +65,6 @@
      <Compile Include="Assets/StarterAssets/TutorialInfo/Scripts/Readme.cs" />
      <Compile Include="Assets/CreateSymmetryJSON.cs" />
      <Compile Include="Assets/BioIK/Setup/BioJoint.cs" />
-     <Compile Include="Assets/StridedTransformer/PythonRunner.cs" />
      <Compile Include="Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" />
      <Compile Include="Assets/BioIK/Setup/BioObjective.cs" />
      <Compile Include="Assets/BioIK/Demo/Scripts/MouseDrag.cs" />
