@@ -55,6 +55,9 @@ public class PlayerIKTarget : MonoBehaviour
     
     //アセットのナンバリング
     public int numberOfPerson = 0;
+    //身長
+    public int heightOfPerson = 180;
+    private float scaleFactor = 1.0f;
     //左右対称の有無
     public bool isSymmetry = false;
     public int FRAME_NUM = 0; //FRAME数
@@ -70,6 +73,7 @@ public class PlayerIKTarget : MonoBehaviour
     private Dictionary<string,Vector3> calibrated_skeleton_coord = new Dictionary<string, Vector3>();
     private bool is_athlete_motion_play=false;
 
+    private Vector3 offset;
     public bool Is_athlete_motion_play
     {
         get { return is_athlete_motion_play; }
@@ -89,6 +93,7 @@ public class PlayerIKTarget : MonoBehaviour
     ){
         Vector3 diff_vector = x - y;
         float joint_length = diff_vector.magnitude;
+        //float joint_length = diff_vector.magnitude * scaleFactor;
 
         return joint_length;
     }
@@ -156,7 +161,22 @@ public class PlayerIKTarget : MonoBehaviour
         this.target_left_upperleg = GameObject.Find("LeftUpperLegTarget" + (numberOfPerson));
         this.target_left_knee = GameObject.Find("LeftKneeTarget" + (numberOfPerson));
         this.target_left_foot = GameObject.Find("LeftFootTarget" + (numberOfPerson));
+        // スケール変更前のLeftFootTargetの位置を保存
+        Vector3 originalLeftFootTargetPosition = this.target_left_foot.transform.position;
 
+        if (heightOfPerson > 0) {
+            scaleFactor = heightOfPerson / 180.0f; // 身長180cmを基準にスケーリング
+        } else {
+            scaleFactor = 1.0f; // デフォルトのスケーリング
+        }
+        Debug.Log("Scale factor: " + scaleFactor);
+
+        //身長をスケールに反映させる
+        //this.armature.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+        offset = this.target_left_foot.transform.position - originalLeftFootTargetPosition;
+        offset.x = 0;
+        offset.z = 0;
+        Debug.Log("offset: " + offset);
         //
         //3d humanoid modelの関節オブジェクト取得
         //
@@ -402,6 +422,7 @@ public class PlayerIKTarget : MonoBehaviour
         SetPositions("hips", this.armature, this.target_hips, this.calibrated_skeleton_coord);
         SetPositions("spine", this.armature, this.target_spine, this.calibrated_skeleton_coord);
         SetPositions("neck", this.armature, this.target_neck, this.calibrated_skeleton_coord);
+        SetPositions("head", this.armature, this.target_head, this.calibrated_skeleton_coord);
 
         //
         //右腕の処理

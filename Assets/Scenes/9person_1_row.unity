@@ -367,6 +367,18 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -421,6 +433,18 @@ PrefabInstance:
     - target: {fileID: -7956613700593044526, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalRotation.z
       value: 7.728761e-21
+      objectReference: {fileID: 0}
+    - target: {fileID: -7646984823093700347, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7646984823093700347, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7646984823093700347, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6962208583103358048, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalRotation.x
@@ -613,6 +637,18 @@ PrefabInstance:
     - target: {fileID: 7732123191846434879, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.11352187
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729224428464104270, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729224428464104270, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729224428464104270, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
@@ -4767,6 +4803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 1
+  heightOfPerson: 150
   isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
@@ -6399,6 +6436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 4
+  heightOfPerson: 130
   isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
@@ -7670,7 +7708,7 @@ GameObject:
   - component: {fileID: 344578052}
   - component: {fileID: 344578051}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameObject3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10649,7 +10687,7 @@ GameObject:
   - component: {fileID: 441004210}
   - component: {fileID: 441004211}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameObject7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14612,6 +14650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 6
+  heightOfPerson: 250
   isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
@@ -18909,6 +18948,18 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -21451,6 +21502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 5
+  heightOfPerson: 130
   isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
@@ -21670,7 +21722,7 @@ GameObject:
   - component: {fileID: 872961547}
   - component: {fileID: 872961546}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameObject2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22711,6 +22763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 8
+  heightOfPerson: 110
   isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
@@ -26162,6 +26215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 3
+  heightOfPerson: 130
   isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
@@ -27524,7 +27578,7 @@ GameObject:
   - component: {fileID: 1167672032}
   - component: {fileID: 1167672033}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameObject6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29119,6 +29173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 9
+  heightOfPerson: 110
   isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
@@ -31611,7 +31666,7 @@ GameObject:
   - component: {fileID: 1307343097}
   - component: {fileID: 1307343096}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameObject4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32809,6 +32864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 2
+  heightOfPerson: 200
   isSymmetry: 1
   FRAME_NUM: 0
   current_frame_id: 0
@@ -35387,7 +35443,7 @@ GameObject:
   - component: {fileID: 1448790530}
   - component: {fileID: 1448790529}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameObject5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38037,7 +38093,7 @@ GameObject:
   - component: {fileID: 1570546505}
   - component: {fileID: 1570546506}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameObject8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39866,7 +39922,7 @@ MonoBehaviour:
   Weight: 1
   Target: {fileID: 1361241846}
   TPX: -0.29164236783981323
-  TPY: 1.2566924095153809
+  TPY: 1.4219999313354492
   TPZ: 0.11681672930717468
   MaximumError: 0.001
 --- !u!1 &1628642074 stripped
@@ -40017,7 +40073,7 @@ GameObject:
   - component: {fileID: 1638868921}
   - component: {fileID: 1638868922}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameObject1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40031,7 +40087,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638868920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.11235763, y: 0.83469236, z: -0.37518328}
+  m_LocalPosition: {x: 0.11235763, y: 1, z: -0.37518328}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43954,6 +44010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jsonFileName: jyp2.json
   numberOfPerson: 7
+  heightOfPerson: 190
   isSymmetry: 0
   FRAME_NUM: 0
   current_frame_id: 0
@@ -44159,7 +44216,7 @@ GameObject:
   - component: {fileID: 1789761020}
   - component: {fileID: 1789761021}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameObject9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
