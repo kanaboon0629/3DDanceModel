@@ -53,8 +53,9 @@ public class PlayerIKTarget : MonoBehaviour
 
     public string jsonFileName = "";
     
-    //アセットのナンバリング
-    public int numberOfPerson = 0;
+    //身長
+    public int heightOfPerson = 180;
+    private float scaleFactor = 1.0f;
     //左右対称の有無
     public bool isSymmetry = false;
     public int FRAME_NUM = 0; //FRAME数
@@ -70,6 +71,7 @@ public class PlayerIKTarget : MonoBehaviour
     private Dictionary<string,Vector3> calibrated_skeleton_coord = new Dictionary<string, Vector3>();
     private bool is_athlete_motion_play=false;
 
+    private Vector3 offset;
     public bool Is_athlete_motion_play
     {
         get { return is_athlete_motion_play; }
@@ -89,6 +91,7 @@ public class PlayerIKTarget : MonoBehaviour
     ){
         Vector3 diff_vector = x - y;
         float joint_length = diff_vector.magnitude;
+        //float joint_length = diff_vector.magnitude * scaleFactor;
 
         return joint_length;
     }
@@ -128,7 +131,7 @@ public class PlayerIKTarget : MonoBehaviour
         Debug.LogFormat("Time interval first:{0}",this.time_update_interval);
 
         //人型アセットの取得
-        this.armature = GameObject.Find("Armature" + (numberOfPerson));
+        this.armature = this.gameObject;
         
         //
         //3D Model Avatarを操作する際のIKのターゲットとなる関節オブジェクトの取得
@@ -136,27 +139,52 @@ public class PlayerIKTarget : MonoBehaviour
         //TODO: ENUM型?
         //体幹のIKターゲット
         //this.target_body_lookat = GameObject.Find("BodyLookAtTarget");
-        this.target_neck = GameObject.Find("NeckTarget" + (numberOfPerson));
-        this.target_spine = GameObject.Find("SpineTarget" + (numberOfPerson));
-        this.target_hips = GameObject.Find("HipsTarget" + (numberOfPerson));
-        this.target_head = GameObject.Find("HeadTarget" + (numberOfPerson));
-        // Right arm IK targets
-        this.target_right_upperarm = GameObject.Find("RightUpperArmTarget" + (numberOfPerson));
-        this.target_right_elbow = GameObject.Find("RightElbowTarget" + (numberOfPerson));
-        this.target_right_hand = GameObject.Find("RightHandTarget" + (numberOfPerson));
-        // Left arm IK targets
-        this.target_left_upperarm = GameObject.Find("LeftUpperArmTarget" + (numberOfPerson));
-        this.target_left_elbow = GameObject.Find("LeftElbowTarget" + (numberOfPerson));
-        this.target_left_hand = GameObject.Find("LeftHandTarget" + (numberOfPerson));
-        // Right leg IK targets
-        this.target_right_upperleg = GameObject.Find("RightUpperLegTarget" + (numberOfPerson));
-        this.target_right_knee = GameObject.Find("RightKneeTarget" + (numberOfPerson));
-        this.target_right_foot = GameObject.Find("RightFootTarget" + (numberOfPerson));
-        // Left leg IK targets
-        this.target_left_upperleg = GameObject.Find("LeftUpperLegTarget" + (numberOfPerson));
-        this.target_left_knee = GameObject.Find("LeftKneeTarget" + (numberOfPerson));
-        this.target_left_foot = GameObject.Find("LeftFootTarget" + (numberOfPerson));
+        
+        // ターゲットオブジェクトをArmatureの子オブジェクトから検索
+        Transform armatureTransform = this.transform;
+        
+        this.target_neck = armatureTransform.GetChild(2).GetChild(0).gameObject;
+        this.target_spine = armatureTransform.GetChild(2).GetChild(1).gameObject;
+        this.target_hips = armatureTransform.GetChild(2).GetChild(2).gameObject;
+        this.target_head = armatureTransform.GetChild(2).GetChild(3).gameObject;
 
+        // Right arm IK targets
+        this.target_right_upperarm = armatureTransform.GetChild(2).GetChild(4).gameObject;
+        this.target_right_elbow = armatureTransform.GetChild(2).GetChild(5).gameObject;
+        this.target_right_hand = armatureTransform.GetChild(2).GetChild(6).gameObject;
+
+        // Left arm IK targets
+        this.target_left_upperarm = armatureTransform.GetChild(2).GetChild(7).gameObject;
+        this.target_left_elbow = armatureTransform.GetChild(2).GetChild(8).gameObject;
+        this.target_left_hand = armatureTransform.GetChild(2).GetChild(9).gameObject;
+
+        // Right leg IK targets
+        this.target_right_upperleg = armatureTransform.GetChild(2).GetChild(10).gameObject;
+        this.target_right_knee = armatureTransform.GetChild(2).GetChild(11).gameObject;
+        this.target_right_foot = armatureTransform.GetChild(2).GetChild(12).gameObject;
+
+        // Left leg IK targets
+        this.target_left_upperleg = armatureTransform.GetChild(2).GetChild(13).gameObject;
+        this.target_left_knee = armatureTransform.GetChild(2).GetChild(14).gameObject;
+        this.target_left_foot = armatureTransform.GetChild(2).GetChild(15).gameObject;
+
+        // スケール変更前のLeftFootTargetの位置を保存
+        Vector3 originalLeftFootTargetPosition = this.target_left_foot.transform.position;
+
+        if (heightOfPerson > 0) {
+            scaleFactor = heightOfPerson / 180.0f; // 身長180cmを基準にスケーリング
+        } else {
+            scaleFactor = 1.0f; // デフォルトのスケーリング
+        }
+        //Debug.Log("Scale factor: " + scaleFactor);
+
+        //身長をスケールに反映させる
+        //this.armature.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+        offset = this.target_left_foot.transform.position - originalLeftFootTargetPosition;
+        offset.x = 0;
+        offset.z = 0;
+        //Debug.Log("offset: " + offset);
+        
         //
         //3d humanoid modelの関節オブジェクト取得
         //
@@ -402,6 +430,7 @@ public class PlayerIKTarget : MonoBehaviour
         SetPositions("hips", this.armature, this.target_hips, this.calibrated_skeleton_coord);
         SetPositions("spine", this.armature, this.target_spine, this.calibrated_skeleton_coord);
         SetPositions("neck", this.armature, this.target_neck, this.calibrated_skeleton_coord);
+        SetPositions("head", this.armature, this.target_head, this.calibrated_skeleton_coord);
 
         //
         //右腕の処理
